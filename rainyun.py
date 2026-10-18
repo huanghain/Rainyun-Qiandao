@@ -2948,6 +2948,7 @@ def run_checkin(account_user=None, account_pwd=None, reuse_proxy=None, failed_pr
         current_points = int(''.join(re.findall(r'\d+', points_raw)))
         if not os.getenv('CI'):
             logger_adapter.info(f"当前剩余积分: {current_points} | 约为 {current_points / 2000:.2f} 元")
+        logger_adapter.info(f"[CHECK] 当前积分: {current_points}")
         logger_adapter.info("签到任务执行成功！")
         # 保存成功截图
         screenshot_path = save_screenshot(driver, current_user, status="success")
